@@ -1,5 +1,42 @@
 import ShapeLeft from "assets/shape-left.png";
 import ShapeRight from "assets/shape-right.png";
+import { keyframes } from '@emotion/core';
+import PatternBG from 'assets/patternBG.png';
+import ArrowOdd from 'assets/arrowOdd.svg';
+import ArrowEven from 'assets/arrowEven.svg';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+const fadeIn2 = keyframes`
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+		transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const playPluse = keyframes`
+  from {
+    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+    opacity: 1;
+  }
+
+  to {
+	transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+    opacity: 0;
+  }
+`;
+
 
 export const bannerStyles = {
   banner: {

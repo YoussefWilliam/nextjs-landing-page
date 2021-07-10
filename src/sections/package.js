@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Flex } from 'theme-ui';
-import { keyframes } from '@emotion/core';
 import React, { useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import PriceCard from 'components/price-card';
@@ -269,22 +268,3 @@ export default function Package() {
     <h1>Package</h1>
   );
 }
-
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-const fadeIn2 = keyframes`
-  from {
-    transform: translateY(50%);
-    opacity: 0;
-  }
-  to {
-		transform: translateY(0);
-    opacity: 1;
-  }
-`;

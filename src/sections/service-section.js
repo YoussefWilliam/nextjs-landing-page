@@ -18,15 +18,3 @@ export default function ServiceSection() {
   );
 }
 
-const playPluse = keyframes`
-  from {
-    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-    opacity: 1;
-  }
-
-  to {
-	transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
-    opacity: 0;
-  }
-`;
-
