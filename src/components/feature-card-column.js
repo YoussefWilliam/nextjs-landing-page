@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Image, Box, Heading, Text } from 'theme-ui';
-import {featureCardColumn} from "./styles"
+import { jsx, Image, Box, Heading, Text } from "theme-ui";
+import { featureCardColumn } from "./styles";
 const FeatureCardColumn = ({
   src,
   altText = "default alt text",
@@ -21,6 +21,5 @@ const FeatureCardColumn = ({
 export default FeatureCardColumn;
 
 FeatureCardColumn.defaultProps = {
-  altText: 'default alt text'
-}
-
+  altText: "default alt text",
+};
