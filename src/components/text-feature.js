@@ -9,7 +9,28 @@ const TextFeature = ({
   btnName,
   btnURL = "#",
 }) => {
-  return <h1>TextFeature</h1>;
+  return (
+    <Box sx={textFeatureStyles.card}>
+      <Box sx={textFeatureStyles.wrapper}>
+        <Text as="p" sx={textFeatureStyles.wrapper.subTitle}>
+          {subTitle}
+        </Text>
+        <Heading as="h2" sx={textFeatureStyles.wrapper.title}>
+          {title}
+        </Heading>
+      </Box>
+      {description && (
+        <Text as="p" sx={textFeatureStyles.description} className="description">
+          {description}
+        </Text>
+      )}
+      {btnName && (
+        <Link href={btnURL} variant="default">
+          <Button variant="primary">{btnName}</Button>
+        </Link>
+      )}
+    </Box>
+  );
 };
 
 export default TextFeature;
