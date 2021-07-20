@@ -1,15 +1,14 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Image } from "theme-ui";
 import TextFeature from "components/text-feature";
-
 import FeatureThumb from "assets/core-feature.png";
 import shapePattern from "assets/shape-pattern2.png";
 import { coreFeatureStyles } from "./styles";
 import { coreFeatureData } from "./data";
 
-export default function CoreFeature() {
+const CoreFeature = () => {
   return (
-    <section sx={{ variant: "section.coreFeature" }}>
+    <section sx={{ variant: "section.feature" }}>
       <Container sx={coreFeatureStyles.containerBox}>
         <Box sx={coreFeatureStyles.contentBox}>
           <TextFeature
@@ -29,4 +28,6 @@ export default function CoreFeature() {
       </Container>
     </section>
   );
-}
+};
+
+export default CoreFeature;
