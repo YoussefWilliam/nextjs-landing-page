@@ -1,16 +1,17 @@
 /** @jsx jsx */
-import { jsx, Container, Heading, Text, Box, Image } from 'theme-ui';
-import SectionHeader from 'components/section-header';
-import Rating from 'components/rating';
-import ButtonGroup from 'components/button-group';
-import Carousel from 'react-multi-carousel';
+import { jsx, Container, Heading, Text, Box, Image } from "theme-ui";
+import SectionHeader from "components/section-header";
+import Rating from "components/rating";
+import ButtonGroup from "components/button-group";
+import Carousel from "react-multi-carousel";
 
-import Avatar1 from 'assets/testimonial/avatar1.png';
-import Avatar2 from 'assets/testimonial/avatar2.png';
-import Avatar3 from 'assets/testimonial/avatar3.png';
-import Avatar4 from 'assets/testimonial/avatar4.png';
+import Avatar1 from "assets/testimonial/avatar1.png";
+import Avatar2 from "assets/testimonial/avatar2.png";
+import Avatar3 from "assets/testimonial/avatar3.png";
+import Avatar4 from "assets/testimonial/avatar4.png";
 
-
+import { testimonialData } from "./data";
+import { testimonialStyles } from "./styles";
 
 const responsive = {
   desktop: {
@@ -36,31 +37,69 @@ const responsive = {
 };
 
 const carouselParams = {
-  additionalTransfrom:0,
-  arrows:false,
-  autoPlaySpeed:3000,
-  centerMode:false,
-  className:"",
-  containerClass:"carousel-container",
-  customButtonGroup:<ButtonGroup />,
-  dotListClass:"",
+  additionalTransfrom: 0,
+  arrows: false,
+  autoPlaySpeed: 3000,
+  centerMode: false,
+  className: "",
+  containerClass: "carousel-container",
+  customButtonGroup: <ButtonGroup />,
+  dotListClass: "",
   draggable: true,
-  focusOnSelect:false,
-  infinite:true,
-  itemClass:"",
+  focusOnSelect: false,
+  infinite: true,
+  itemClass: "",
   keyBoardControl: true,
-  minimumTouchDrag:80,
+  minimumTouchDrag: 80,
   renderButtonGroupOutside: true,
-  renderDotsOutside:false,
-  responsive:responsive,
-  showDots:false,
-  sliderClass:"",
-  slidesToSlide:1,
-}
+  renderDotsOutside: false,
+  responsive: responsive,
+  showDots: false,
+  sliderClass: "",
+  slidesToSlide: 1,
+};
 
-export default function TestimonialCard() {
+const TestimonialCard = () => {
   return (
-   <h1>Testimonial Card</h1>
+    <section id="testimonial" sx={{ variant: "section.testimonial" }}>
+      <Container css={{ textAlign: "center" }}>
+        <SectionHeader
+          slogan="Testimonial"
+          title="Meet Clients Satisfactions"
+        />
+        <Box sx={testimonialStyles.carouselWrapper}>
+          <Carousel {...carouselParams}>
+            {testimonialData.map((item) => (
+              <Box sx={testimonialStyles.reviewCard} key={item.sliderClass}>
+                <Rating rating={item.review} />
+                <Heading as="h3" sx={testimonialStyles.title}>
+                  {item.title}
+                </Heading>
+                <Text sx={testimonialStyles.description}>
+                  {item.description}
+                </Text>
+                <div className="card-footer">
+                  <div className="image">
+                    <Image src={item.avatar} alt="client-image" />
+                  </div>
+                  <div className="reviewer-info">
+                    <Heading as="h4" sx={testimonialStyles.heading}>
+                      {" "}
+                      {item.name}
+                    </Heading>
+                    <Text sx={testimonialStyles.designation}>
+                      {" "}
+                      {item.designation}
+                    </Text>
+                  </div>
+                </div>
+              </Box>
+            ))}
+          </Carousel>
+        </Box>
+      </Container>
+    </section>
   );
-}
+};
 
+export default TestimonialCard;
