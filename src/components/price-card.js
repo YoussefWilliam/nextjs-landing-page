@@ -14,10 +14,40 @@ const PriceCard = ({
     points,
   },
 }) => {
-  return <h1>PriceCard</h1>;
+  return (
+    <Card
+      className={header ? "package__card active" : "package__card"}
+      sx={priceCardStyles.pricingBox}
+    >
+      {header && <Text sx={priceCardStyles.header}> {header}</Text>}
+      <Box>
+        <Box className="package__header" sx={priceCardStyles.pricingHeader}>
+          <Heading className="package__name" variant="title">
+            {name}
+          </Heading>
+          <Text as="p">{description}</Text>
+        </Box>
+        <List items={points} childStyle={priceCardStyles.listItem} />
+        <Text className="package__price" sx={priceCardStyles.price}>
+          {priceWithUnit}
+          <span>/Montly</span>
+        </Text>
+        <Box sx={priceCardStyles.buttonGroup}>
+          <Button variant="primary">{buttonText}</Button>
+          {anotherOption && (
+            <Button
+              variant="textButton"
+              className="free__trail"
+              sx={{ color: "black" }}
+            >
+              {anotherOption}
+            </Button>
+          )}
+        </Box>
+      </Box>
+    </Card>
+  );
 };
-
-
 
 export default PriceCard;
 
