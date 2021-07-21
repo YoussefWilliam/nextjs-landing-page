@@ -6,7 +6,6 @@ const Drawer = ({
   className,
   children,
   closeButton,
-  closeButtonStyle,
   drawerHandler,
   toggleHandler,
   open,

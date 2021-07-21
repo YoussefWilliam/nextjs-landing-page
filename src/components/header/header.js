@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Button } from "theme-ui";
-import { keyframes } from "@emotion/core";
 import { Link } from "react-scroll";
 import Logo from "components/logo";
 import LogoDark from "assets/logo.svg";
@@ -42,18 +41,5 @@ const Header = ({ className }) => {
     </header>
   );
 };
-
-const positionAnim = keyframes`
-  from {
-    position: fixed;
-    opacity: 1;
-  }
-
-  to {
-    position: absolute;
-    opacity: 1;
-    transition: all 0.4s ease;
-  }
-`;
 
 export default Header;

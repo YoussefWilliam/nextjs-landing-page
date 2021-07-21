@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Image, Box, Heading, Text } from "theme-ui";
+import { jsx, Image, Box, Heading } from "theme-ui";
 import { featureCardStyles } from "./styles";
 
 const FeatureCard = ({ src, altText = "default alt text", title, text }) => {

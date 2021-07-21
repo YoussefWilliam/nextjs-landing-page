@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState } from "react";
 /** @jsx jsx */
 import {
@@ -10,7 +12,6 @@ import {
   Button,
   Image,
 } from "theme-ui";
-import { keyframes } from "@emotion/core";
 import TextFeature from "components/text-feature";
 import { IoIosPlay } from "react-icons/io";
 
